@@ -2,4 +2,8 @@
     <string name="app_name">AndroidMenu</string>
     <string name="action_intent">action_intent</string>
     <string name="action_settings">settings</string>
+    <string name="bottom_item_1">Item 1</string>
+    <string name="bottom_item_2">Item 2</string>
+    <string name="favorite">favorite</string>
+    <string name="content_description_favorite">this is an add to favorites button</string>
 </resources>
