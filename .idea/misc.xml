@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/danie/AndroidStudioProjects/AndroidMenus/app/src/main/res/drawable/todo_item_bg.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/AndroidMenus/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/AndroidMenus/app/src/main/res/layout/todo_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/AndroidMenus/app/src/main/res/menu/bottom_menu.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/AndroidMenus/app/src/main/res/menu/top_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/AndroidMenus/app/src/main/res/menu/top_menu.xml" value="0.33" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/AndroidMenus/app/src/main/res/xml/searchable.xml" value="0.20516304347826086" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.13425925925925927" />
         <entry key="app/src/main/res/menu/top_menu.xml" value="0.13425925925925927" />
       </map>

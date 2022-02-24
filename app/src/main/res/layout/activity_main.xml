@@ -14,12 +14,13 @@
         android:layout_height="?attr/actionBarSize"
         />
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/todo_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Hello World!"
-        android:gravity="center"
-        android:layout_weight="1"/>
+        android:layout_weight="1">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         style="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface"
