@@ -1,4 +1,4 @@
-package es.urjc.alumnos.dhervas.androidmenu
+package es.urjc.alumnos.dhervas.androidmenu.util
 
 import android.content.Context
 import android.widget.SearchView

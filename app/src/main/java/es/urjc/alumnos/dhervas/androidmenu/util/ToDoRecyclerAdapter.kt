@@ -1,4 +1,4 @@
-package es.urjc.alumnos.dhervas.androidmenu
+package es.urjc.alumnos.dhervas.androidmenu.util
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,8 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import es.urjc.alumnos.dhervas.androidmenu.R
+import es.urjc.alumnos.dhervas.androidmenu.model.ToDoItemDataModel
 
 class ToDoRecyclerAdapter(private val dataSet : ArrayList<ToDoItemDataModel>) : RecyclerView.Adapter<ToDoRecyclerAdapter.ToDoItemViewHolder>(), Filterable {
     private val backupDataSet = ArrayList(dataSet)
