@@ -14,7 +14,7 @@ import es.urjc.alumnos.dhervas.androidmenu.*
 import es.urjc.alumnos.dhervas.androidmenu.addToDo.AddToDoDialogFragment
 import es.urjc.alumnos.dhervas.androidmenu.model.ToDoItemDataModel
 import es.urjc.alumnos.dhervas.androidmenu.util.OnQueryTextListener
-import es.urjc.alumnos.dhervas.androidmenu.util.ToDoListFragment
+import es.urjc.alumnos.dhervas.androidmenu.listToDo.ToDoListFragment
 import es.urjc.alumnos.dhervas.androidmenu.util.ToDoRecyclerAdapter
 
 class MainActivity : AppCompatActivity() {

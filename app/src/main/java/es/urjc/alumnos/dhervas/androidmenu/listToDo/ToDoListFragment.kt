@@ -1,4 +1,4 @@
-package es.urjc.alumnos.dhervas.androidmenu.util
+package es.urjc.alumnos.dhervas.androidmenu.listToDo
 
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import es.urjc.alumnos.dhervas.androidmenu.R
 import es.urjc.alumnos.dhervas.androidmenu.addToDo.AddToDoDialogFragment
 import es.urjc.alumnos.dhervas.androidmenu.model.ToDoItemDataModel
+import es.urjc.alumnos.dhervas.androidmenu.util.ToDoRecyclerAdapter
 
 class ToDoListFragment : Fragment() {
     private val fragmentTag : String = "ToDoListFragment"
