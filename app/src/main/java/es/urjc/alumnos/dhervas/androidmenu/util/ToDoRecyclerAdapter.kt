@@ -48,6 +48,10 @@ class ToDoRecyclerAdapter(private val dataSet : ArrayList<ToDoItemDataModel>) : 
         notifyItemInserted(dataSet.size - 1)
     }
 
+    fun getAllItems() : ArrayList<ToDoItemDataModel> {
+        return backupDataSet
+    }
+
     class ToDoTextFilter(private val parent : ToDoRecyclerAdapter) : Filter() {
         override fun performFiltering(constraint: CharSequence?): FilterResults {
             val filteredArray : ArrayList<ToDoItemDataModel> = ArrayList()

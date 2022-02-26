@@ -1,5 +1,6 @@
 package es.urjc.alumnos.dhervas.androidmenu.listToDo
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -10,12 +11,17 @@ import androidx.recyclerview.widget.RecyclerView
 import es.urjc.alumnos.dhervas.androidmenu.R
 import es.urjc.alumnos.dhervas.androidmenu.addToDo.AddToDoDialogFragment
 import es.urjc.alumnos.dhervas.androidmenu.model.ToDoItemDataModel
+import es.urjc.alumnos.dhervas.androidmenu.util.DataManager
 import es.urjc.alumnos.dhervas.androidmenu.util.ToDoRecyclerAdapter
 
 class ToDoListFragment : Fragment() {
     private val fragmentTag : String = "ToDoListFragment"
     private val toDos = ArrayList<ToDoItemDataModel>()
     lateinit var todoAdapter : ToDoRecyclerAdapter
+
+    private val filename = "todoitems.json"
+
+    private lateinit var dataManager : DataManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,10 +34,7 @@ class ToDoListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Test Data
-        toDos.add(ToDoItemDataModel("Test 1", "SubTitle 1"))
-        toDos.add(ToDoItemDataModel("Test 2", "SubTitle 2"))
-        toDos.add(ToDoItemDataModel("Test 3", "SubTitle 3"))
+        loadLocalData()
 
         // Floating Button
         view.findViewById<View>(R.id.todo_floating_button)?.apply {
@@ -62,6 +65,33 @@ class ToDoListFragment : Fragment() {
                     item?.let { todoAdapter.addItem(it) }
                 }
             }
+        }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        // Set data manager
+        dataManager = DataManager(context, filename)
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        Log.d(fragmentTag, "onStop")
+
+        // Save ToDoList in external storage
+        val itemList = todoAdapter.getAllItems()
+        dataManager.saveToFile(itemList)
+    }
+
+    // Load saved data (in json file)
+    private fun loadLocalData() {
+        Log.d(fragmentTag, "loadLocalData")
+
+        val items = dataManager.readFromFile()
+        items?.let {
+            toDos.addAll(it)
         }
     }
 }
