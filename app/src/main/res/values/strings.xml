@@ -7,4 +7,10 @@
     <string name="nav_search_bar">search bar</string>
     <string name="content_description_favorite">this is an add to favorites button</string>
     <string name="search_hint">type to search</string>
+    <string name="add_todo_title_text">Title</string>
+    <string name="add_todo_subtitle_text">Subtitle</string>
+    <string name="add_todo_title_hint">title</string>
+    <string name="add_todo_subtitle_hint">subtitle</string>
+    <string name="add_todo_button_text">OK</string>
+    <string name="content_description_fragment_todo_list">Hello blank fragment</string>
 </resources>

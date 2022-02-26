@@ -1,6 +1,5 @@
 package es.urjc.alumnos.dhervas.androidmenu
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,11 +40,15 @@ class ToDoRecyclerAdapter(private val dataSet : ArrayList<ToDoItemDataModel>) : 
         return filter
     }
 
+    fun addItem(item : ToDoItemDataModel) {
+        backupDataSet.add(item)
+        dataSet.add(item)
+        notifyItemInserted(dataSet.size - 1)
+    }
+
     class ToDoTextFilter(private val parent : ToDoRecyclerAdapter) : Filter() {
         override fun performFiltering(constraint: CharSequence?): FilterResults {
             val filteredArray : ArrayList<ToDoItemDataModel> = ArrayList()
-
-            if(parent.backupDataSet.isEmpty()) Log.e("FILTER", "VACIO")
 
             if (constraint == null || constraint.isEmpty()){
                 filteredArray.addAll(parent.backupDataSet)
