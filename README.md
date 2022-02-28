@@ -11,3 +11,8 @@ on his ToDo's.
 
 <img src="https://github.com/dhrodao/Android-ToDo-App/blob/master/docs/screenshot_deleted.png" alt="Demo list" data-canonical-src="docs/screenshot_deleted.png" width="300"/>
 
+## Future changes
+
+- Add time scheduled ToDo's with alerts
+- Add ToDo list backup with Google Drive
+- Improve UI
