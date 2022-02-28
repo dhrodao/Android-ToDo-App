@@ -7,9 +7,9 @@ on his ToDo's.
 
 ## Screenshots
 
-<img src="https://github.com/dhrodao/Android-ToDo-App/blob/master/docs/screenshot_list.png" alt="Demo list" data-canonical-src="docs/screenshot_list.png" width="300"/>
+<img src="https://github.com/dhrodao/Android-ToDo-App/blob/master/docs/screenshot_list.png" alt="Demo list" data-canonical-src="docs/screenshot_list.png" width="200"/>
 
-<img src="https://github.com/dhrodao/Android-ToDo-App/blob/master/docs/screenshot_deleted.png" alt="Demo list" data-canonical-src="docs/screenshot_deleted.png" width="300"/>
+<img src="https://github.com/dhrodao/Android-ToDo-App/blob/master/docs/screenshot_deleted.png" alt="Demo list" data-canonical-src="docs/screenshot_deleted.png" width="200"/>
 
 ## Future changes
 
