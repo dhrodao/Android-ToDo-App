@@ -1,4 +1,4 @@
-package es.urjc.alumnos.dhervas.androidmenu.main
+package es.urjc.alumnos.dhervas.androidtodoapp.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,10 +10,10 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.*
 import com.google.android.material.appbar.MaterialToolbar
-import es.urjc.alumnos.dhervas.androidmenu.*
-import es.urjc.alumnos.dhervas.androidmenu.addToDo.AddToDoDialogFragment
-import es.urjc.alumnos.dhervas.androidmenu.util.OnQueryTextListener
-import es.urjc.alumnos.dhervas.androidmenu.listToDo.ToDoListFragment
+import es.urjc.alumnos.dhervas.androidtodoapp.R
+import es.urjc.alumnos.dhervas.androidtodoapp.addToDo.AddToDoDialogFragment
+import es.urjc.alumnos.dhervas.androidtodoapp.util.OnQueryTextListener
+import es.urjc.alumnos.dhervas.androidtodoapp.listToDo.ToDoListFragment
 
 class MainActivity : AppCompatActivity() {
     private val tag : String = "MainActivity"

@@ -1,10 +1,10 @@
-package es.urjc.alumnos.dhervas.androidmenu.util
+package es.urjc.alumnos.dhervas.androidtodoapp.util
 
 import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import es.urjc.alumnos.dhervas.androidmenu.model.ToDoItemDataModel
+import es.urjc.alumnos.dhervas.androidtodoapp.model.ToDoItemDataModel
 import java.io.*
 
 class DataManager(private val context : Context, private val filename : String) {

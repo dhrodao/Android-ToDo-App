@@ -1,4 +1,4 @@
-package es.urjc.alumnos.dhervas.androidmenu.util
+package es.urjc.alumnos.dhervas.androidtodoapp.util
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +10,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-import es.urjc.alumnos.dhervas.androidmenu.R
-import es.urjc.alumnos.dhervas.androidmenu.model.ToDoItemDataModel
+import es.urjc.alumnos.dhervas.androidtodoapp.R
+import es.urjc.alumnos.dhervas.androidtodoapp.model.ToDoItemDataModel
 
 
 class ToDoRecyclerAdapter(private val fragment : Fragment, private val dataSet : ArrayList<ToDoItemDataModel>) : RecyclerView.Adapter<ToDoRecyclerAdapter.ToDoItemViewHolder>(), Filterable {

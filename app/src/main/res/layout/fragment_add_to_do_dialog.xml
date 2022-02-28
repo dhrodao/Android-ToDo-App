@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".addToDo.AddToDoDialogFragment"
+    tools:context="es.urjc.alumnos.dhervas.androidtodoapp.addToDo.AddToDoDialogFragment"
     android:orientation="vertical"
     android:padding="5dp">
         <TextView

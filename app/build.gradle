@@ -7,7 +7,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "es.urjc.alumnos.dhervas.androidmenu"
+        applicationId "es.urjc.alumnos.dhervas.androidtodoapp"
         minSdk 26
         targetSdk 32
         versionCode 1

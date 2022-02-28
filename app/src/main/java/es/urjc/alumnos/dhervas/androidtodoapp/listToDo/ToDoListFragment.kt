@@ -1,4 +1,4 @@
-package es.urjc.alumnos.dhervas.androidmenu.listToDo
+package es.urjc.alumnos.dhervas.androidtodoapp.listToDo
 
 import android.content.Context
 import android.os.Bundle
@@ -9,12 +9,12 @@ import androidx.fragment.app.setFragmentResultListener
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import es.urjc.alumnos.dhervas.androidmenu.R
-import es.urjc.alumnos.dhervas.androidmenu.addToDo.AddToDoDialogFragment
-import es.urjc.alumnos.dhervas.androidmenu.model.ToDoItemDataModel
-import es.urjc.alumnos.dhervas.androidmenu.util.DataManager
-import es.urjc.alumnos.dhervas.androidmenu.util.SwipeToDeleteCallback
-import es.urjc.alumnos.dhervas.androidmenu.util.ToDoRecyclerAdapter
+import es.urjc.alumnos.dhervas.androidtodoapp.R
+import es.urjc.alumnos.dhervas.androidtodoapp.addToDo.AddToDoDialogFragment
+import es.urjc.alumnos.dhervas.androidtodoapp.model.ToDoItemDataModel
+import es.urjc.alumnos.dhervas.androidtodoapp.util.DataManager
+import es.urjc.alumnos.dhervas.androidtodoapp.util.SwipeToDeleteCallback
+import es.urjc.alumnos.dhervas.androidtodoapp.util.ToDoRecyclerAdapter
 
 class ToDoListFragment : Fragment() {
     private val fragmentTag : String = "ToDoListFragment"

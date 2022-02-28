@@ -1,4 +1,4 @@
-package es.urjc.alumnos.dhervas.androidmenu.model
+package es.urjc.alumnos.dhervas.androidtodoapp.model
 
 import android.os.Parcel
 import android.os.Parcelable

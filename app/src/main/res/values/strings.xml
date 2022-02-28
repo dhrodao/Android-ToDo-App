@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidMenu</string>
+    <string name="app_name">AndroidToDoApp</string>
     <string name="action_intent">action_intent</string>
     <string name="action_settings">settings</string>
     <string name="bottom_item_1">Item 1</string>
