@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.setFragmentResult
@@ -37,7 +38,7 @@ class AddToDoDialogFragment : DialogFragment() {
             val subTitle = view.findViewById<TextView>(R.id.add_todo_subtitle_text).text.toString()
 
             // Item to pass
-            val item = ToDoItemDataModel(title, subTitle)
+            val item = ToDoItemDataModel(title, subTitle, false)
 
             // Bundle
             val bundle = Bundle()

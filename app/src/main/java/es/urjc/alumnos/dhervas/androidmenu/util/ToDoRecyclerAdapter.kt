@@ -3,6 +3,7 @@ package es.urjc.alumnos.dhervas.androidmenu.util
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.Filter
 import android.widget.Filterable
 import android.widget.TextView
@@ -27,6 +28,11 @@ class ToDoRecyclerAdapter(private val fragment : Fragment, private val dataSet :
     }
 
     override fun onBindViewHolder(holder: ToDoItemViewHolder, position: Int) {
+        // Handler for when the isChecked status changes
+        holder.itemView.findViewById<CheckBox>(R.id.item_checkbox).setOnCheckedChangeListener { _, b ->
+            backupDataSet.elementAt(position).isChecked = b
+        }
+
         holder.setData(dataSet[position])
     }
 
@@ -37,10 +43,12 @@ class ToDoRecyclerAdapter(private val fragment : Fragment, private val dataSet :
     class ToDoItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val titleView : TextView = itemView.findViewById(R.id.item_title)
         private val subTitleView : TextView = itemView.findViewById(R.id.item_sub_title)
+        private val checkBox : CheckBox = itemView.findViewById(R.id.item_checkbox)
 
         fun setData(todoItem : ToDoItemDataModel){
             titleView.text = todoItem.title
             subTitleView.text = todoItem.subTitle
+            checkBox.isChecked = todoItem.isChecked
         }
     }
 
