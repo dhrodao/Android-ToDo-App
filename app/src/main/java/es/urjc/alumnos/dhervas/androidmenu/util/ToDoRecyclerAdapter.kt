@@ -6,13 +6,19 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import es.urjc.alumnos.dhervas.androidmenu.R
 import es.urjc.alumnos.dhervas.androidmenu.model.ToDoItemDataModel
 
-class ToDoRecyclerAdapter(private val dataSet : ArrayList<ToDoItemDataModel>) : RecyclerView.Adapter<ToDoRecyclerAdapter.ToDoItemViewHolder>(), Filterable {
+
+class ToDoRecyclerAdapter(private val fragment : Fragment, private val dataSet : ArrayList<ToDoItemDataModel>) : RecyclerView.Adapter<ToDoRecyclerAdapter.ToDoItemViewHolder>(), Filterable {
     private val backupDataSet = ArrayList(dataSet)
     private val filter = ToDoTextFilter(this)
+    private var recentlyRemovedItem : ToDoItemDataModel? = null
+    private var recentlyRemovedItemPositionBackup : Int? = null
+    private var recentlyRemovedItemPositionDataSet : Int? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToDoItemViewHolder {
         val todoView = LayoutInflater.from(parent.context).inflate(R.layout.todo_item, parent, false)
@@ -50,6 +56,42 @@ class ToDoRecyclerAdapter(private val dataSet : ArrayList<ToDoItemDataModel>) : 
 
     fun getAllItems() : ArrayList<ToDoItemDataModel> {
         return backupDataSet
+    }
+
+    fun deleteItem(position : Int) {
+        // Save deleted item
+        recentlyRemovedItem = dataSet[position]
+        recentlyRemovedItemPositionBackup = backupDataSet.indexOf(recentlyRemovedItem)
+        recentlyRemovedItemPositionDataSet = dataSet.indexOf(recentlyRemovedItem)
+
+        // Delete item from lists
+        dataSet.remove(recentlyRemovedItem)
+        backupDataSet.removeAt(position)
+
+        // Notify dataset changed
+        notifyItemRemoved(recentlyRemovedItemPositionDataSet!!)
+
+        // Show SnackBar and Undo message
+        showUndoMessage()
+    }
+
+    private fun showUndoMessage() {
+        fragment.view?.findViewById<View>(R.id.todo_list_fragment)?.let {
+            val snackBar = Snackbar.make(it, R.string.snack_bar_text, Snackbar.LENGTH_LONG)
+            snackBar.setAction(R.string.snack_bar_undo_text) { undoDelete() }
+            snackBar.show()
+        }
+    }
+
+    private fun undoDelete(){
+        recentlyRemovedItem?.let {
+            // Insert item
+            backupDataSet.add(recentlyRemovedItemPositionBackup!!, recentlyRemovedItem)
+            dataSet.add(recentlyRemovedItemPositionDataSet!!, recentlyRemovedItem!!)
+
+            // Notify to refresh view
+            notifyItemInserted(recentlyRemovedItemPositionDataSet!!)
+        }
     }
 
     class ToDoTextFilter(private val parent : ToDoRecyclerAdapter) : Filter() {

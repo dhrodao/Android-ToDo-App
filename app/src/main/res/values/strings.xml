@@ -13,4 +13,6 @@
     <string name="add_todo_subtitle_hint">subtitle</string>
     <string name="add_todo_button_text">OK</string>
     <string name="content_description_fragment_todo_list">Hello blank fragment</string>
+    <string name="snack_bar_text">Item deleted</string>
+    <string name="snack_bar_undo_text">UNDO</string>
 </resources>

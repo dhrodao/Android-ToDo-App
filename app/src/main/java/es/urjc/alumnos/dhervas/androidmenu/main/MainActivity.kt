@@ -12,15 +12,11 @@ import androidx.fragment.app.*
 import com.google.android.material.appbar.MaterialToolbar
 import es.urjc.alumnos.dhervas.androidmenu.*
 import es.urjc.alumnos.dhervas.androidmenu.addToDo.AddToDoDialogFragment
-import es.urjc.alumnos.dhervas.androidmenu.model.ToDoItemDataModel
 import es.urjc.alumnos.dhervas.androidmenu.util.OnQueryTextListener
 import es.urjc.alumnos.dhervas.androidmenu.listToDo.ToDoListFragment
-import es.urjc.alumnos.dhervas.androidmenu.util.ToDoRecyclerAdapter
 
 class MainActivity : AppCompatActivity() {
     private val tag : String = "MainActivity"
-    private val toDos = ArrayList<ToDoItemDataModel>()
-    private val todoAdapter = ToDoRecyclerAdapter(toDos)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

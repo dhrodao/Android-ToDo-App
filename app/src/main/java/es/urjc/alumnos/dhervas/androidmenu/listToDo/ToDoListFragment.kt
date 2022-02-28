@@ -6,12 +6,14 @@ import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import es.urjc.alumnos.dhervas.androidmenu.R
 import es.urjc.alumnos.dhervas.androidmenu.addToDo.AddToDoDialogFragment
 import es.urjc.alumnos.dhervas.androidmenu.model.ToDoItemDataModel
 import es.urjc.alumnos.dhervas.androidmenu.util.DataManager
+import es.urjc.alumnos.dhervas.androidmenu.util.SwipeToDeleteCallback
 import es.urjc.alumnos.dhervas.androidmenu.util.ToDoRecyclerAdapter
 
 class ToDoListFragment : Fragment() {
@@ -33,7 +35,7 @@ class ToDoListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        // Load data from JSON
         loadLocalData()
 
         // Floating Button
@@ -48,10 +50,14 @@ class ToDoListFragment : Fragment() {
         }
 
         // RecyclerView
-        todoAdapter = ToDoRecyclerAdapter(toDos)
+        todoAdapter = ToDoRecyclerAdapter(this, toDos)
         view.findViewById<RecyclerView>(R.id.todo_container)?.apply{
             adapter = todoAdapter
             layoutManager = LinearLayoutManager(context)
+
+            val swipeToDeleteCallback = SwipeToDeleteCallback(todoAdapter)
+            val itemTouchHelper = ItemTouchHelper(swipeToDeleteCallback)
+            itemTouchHelper.attachToRecyclerView(this)
         }
 
         // Dialog Fragment Result Listener
