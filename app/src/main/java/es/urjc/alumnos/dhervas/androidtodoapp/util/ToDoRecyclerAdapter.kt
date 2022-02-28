@@ -52,10 +52,6 @@ class ToDoRecyclerAdapter(private val fragment : Fragment, private val dataSet :
         }
     }
 
-    override fun getFilter(): Filter {
-        return filter
-    }
-
     fun addItem(item : ToDoItemDataModel) {
         backupDataSet.add(item)
         dataSet.add(item)
@@ -100,6 +96,10 @@ class ToDoRecyclerAdapter(private val fragment : Fragment, private val dataSet :
             // Notify to refresh view
             notifyItemInserted(recentlyRemovedItemPositionDataSet!!)
         }
+    }
+
+    override fun getFilter(): Filter {
+        return filter
     }
 
     class ToDoTextFilter(private val parent : ToDoRecyclerAdapter) : Filter() {

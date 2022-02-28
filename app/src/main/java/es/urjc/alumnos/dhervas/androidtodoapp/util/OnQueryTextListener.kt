@@ -10,8 +10,6 @@ class OnQueryTextListener(private val context : Context, private val adapter : T
     }
 
     override fun onQueryTextChange(text: String?): Boolean {
-        Toast.makeText(context, "$text", Toast.LENGTH_SHORT).show()
-
         adapter.filter.filter(text)
         return true
     }
