@@ -14,5 +14,5 @@ on his ToDo's.
 ## Future changes
 
 - Add time scheduled ToDo's with alerts
-- Add ToDo list backup with Google Drive
+- Add ToDo list backup with Firebase
 - Improve UI
